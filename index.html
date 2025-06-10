@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>Kuca Muje Mazalovica u Kladnju</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        a-scene {
+            width: 80%;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio-bosnian">
+        <source src="https://cdn.glitch.global/622138b6-fdfa-4424-89f5-b95f2cf0cd92/ttsmaker-file-2025-2-27-18-30-1.mp3?v=1740677451487" type="audio/mpeg">
+    </audio>
+    <audio id="audio-english">
+        <source src="https://cdn.glitch.global/622138b6-fdfa-4424-89f5-b95f2cf0cd92/ttsmaker-file-2025-3-2-17-22-41.mp3?v=1740932598072" type="audio/mpeg">
+    </audio>
+    <audio id="audio-german">
+        <source src="https://cdn.glitch.global/622138b6-fdfa-4424-89f5-b95f2cf0cd92/ttsmaker-file-2025-3-2-19-43-43.mp3?v=1740941053599" type="audio/mpeg">
+    </audio>
+    <audio id="audio-italian">
+        <source src="https://cdn.glitch.global/622138b6-fdfa-4424-89f5-b95f2cf0cd92/ttsmaker-file-2025-3-2-19-48-31.mp3?v=1740941335455" type="audio/mpeg">
+    </audio>
+
+    <a-scene embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;">
+        <a-plane color="#007BFF" height="3.5" width="6.5" position="0 0.5 -5" opacity="0.9"></a-plane>
+        
+         <a-entity 
+            gltf-model="url(https://cdn.glitch.global/622138b6-fdfa-4424-89f5-b95f2cf0cd92/tripo_pbr_model_56e2530c-d8e2-44ce-b922-8fbb728cbae0.glb?v=1740340858369)" 
+            position="-2 1 -5" 
+            scale="0.5 0.5 0.5" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+      <a-entity 
+    gltf-model="url(https://cdn.glitch.global/622138b6-fdfa-4424-89f5-b95f2cf0cd92/tripo_pbr_model_56e2530c-d8e2-44ce-b922-8fbb728cbae0.glb?v=1740340858369)" 
+    position="2 1 -5" 
+    scale="0.5 0.5 0.5" 
+    rotation="0 240 0" 
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+</a-entity>
+      
+        <a-entity camera look-controls position="0 0 0" fov="85">
+            <a-cursor color="#FF0000" radius="0.05"></a-cursor>
+        </a-entity>
+
+        <a-entity id="eng-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+                  material="color: red" position="-2 2 -4.9"
+                  text="value: ENGLISH; color: white; align: center; width: 3;">
+        </a-entity>
+
+        <a-entity id="deu-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+                  material="color: yellow" position="0 2 -4.9"
+                  text="value: DEUCH; color: black; align: center; width: 3;">
+        </a-entity>
+
+        <a-entity id="ita-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+                  material="color: green" position="2 2 -4.9"
+                  text="value: ITALIANO; color: white; align: center; width: 3;">
+        </a-entity>
+
+        <a-entity position="0 0.8 -4.9">
+            <a-text value="Krajem juna i pocetkom jula 1943. godine Josip Broz Tito, vrhovni komandant Narodnooslobodilacke vojske Jugoslavije, sa svojim stabom, boravio je na podrucju danasnje opcine Kladanj. Tito je u kladanjski kraj stigao nakon teskih borbi u podrucju Sutjeske, jer je vojska koju je vodio, nakon proboja neprijateljskog obruca na Sutjesci, krenula u oslobodjenje Olova, Kladnja, Vlasenice, Srebrenice i Zvornika. Tito je nakon oslobadjanja Kladnja boravio u selu Plahovici, u kući Muje Mazalovica, i u obliznjoj pecini.Osim najuzeg staba, sa Titom su ovdje boravila i tri clana britanske misije, koji su bili i na Sutjesci. Tito je danju radio gore u pecini, a ovdje bi odrzavao sastanke i prespavao u ovoj kuci i u obliznjoj pecini udareni temelji danasnje Bosne, koji su potvrdjeni na zasjedanju AVNOJ-a u Jajcu.Gdje je receno: Mora biti onako kako smo u Kladnju dogovorili.Kladanjci cuvaju uspomene na Tita ,pecinu i kucu Muje Mazalovica. Do Plahovica, sela udaljenog 2,2 kilometra od centra Kladnja, moze se doci asfaltnim putem. U ovom mjestu, prema Popisu iz 2013. godine, bilo je 415 stanovnika. Svi su Bosnjaci, osim jednog Hrvata.  " 
+                    color="#FFFFFF" width="5.5" wrap-count="50" align="center" scale="0.5 0.5 0.5">
+            </a-text>
+        </a-entity>
+
+        <!-- Dodani tekst ispod žutog teksta -->
+        <a-entity position="0 -0.8 -4.9" id="location-link">
+            <a-text 
+                value="Lokacija:" 
+                position="-2 0 0.05" 
+                color="#000000"
+                align="center"
+                scale="1.2 1.4 1.4"
+                letter-spacing="1">
+            </a-text>
+           <!-- Crvena pozadina samo za "Klikni ovde" -->
+    <a-plane 
+        color="#FF0000" 
+        height="0.5" 
+        width="1.6" 
+        opacity="0.5" 
+        position="-0.3 0 0.06">
+    </a-plane>
+
+    <!-- "Klikni ovde" na crvenoj pozadini -->
+    <a-text 
+        value="Klikni ovde" 
+        position="-0.4 0 0.06"  
+        color="#000000"
+        align="center"
+        scale="1.2 1.2 1.2" 
+        letter-spacing="1"
+        class="clickable">
+    </a-text>
+          
+          
+        </a-entity>
+      
+      
+      
+      
+      
+      
+      
+        <a-entity camera look-controls position="0 0 0" fov="85">
+            <a-cursor color="#FF0000" radius="0.05"></a-cursor>
+        </a-entity>
+    </a-scene>
+
+    <script>
+        let bosnianAudio = document.getElementById('audio-bosnian');
+        let englishAudio = document.getElementById('audio-english');
+        let germanAudio = document.getElementById('audio-german');
+        let italianAudio = document.getElementById('audio-italian');
+        let engButton = document.getElementById('eng-button');
+        let deuButton = document.getElementById('deu-button');
+        let itaButton = document.getElementById('ita-button');
+
+        function stopAllAudio() {
+            bosnianAudio.pause(); bosnianAudio.currentTime = 0;
+            englishAudio.pause(); englishAudio.currentTime = 0;
+            germanAudio.pause(); germanAudio.currentTime = 0;
+            italianAudio.pause(); italianAudio.currentTime = 0;
+        }
+
+        function switchToEnglish() { stopAllAudio(); englishAudio.play(); }
+        function switchToGerman() { stopAllAudio(); germanAudio.play(); }
+        function switchToItalian() { stopAllAudio(); italianAudio.play(); }
+
+        window.addEventListener('click', () => {
+            if (bosnianAudio.paused && englishAudio.paused && germanAudio.paused && italianAudio.paused) {
+                bosnianAudio.play().catch(e => console.log("Audio autoplay blokiran: " + e));
+            }
+        });
+
+        window.addEventListener('load', () => {
+            bosnianAudio.play().catch(e => console.log("Audio autoplay blokiran: " + e));
+        });
+
+        engButton.addEventListener('mouseenter', switchToEnglish);
+        deuButton.addEventListener('mouseenter', switchToGerman);
+        itaButton.addEventListener('mouseenter', switchToItalian);
+
+        [englishAudio, germanAudio, italianAudio].forEach(audio => {
+            audio.addEventListener('play', () => bosnianAudio.pause());
+            audio.addEventListener('ended', () => bosnianAudio.play());
+        });
+      
+       document.getElementById('location-link').addEventListener('click', () => {
+    window.location.href = 'https://www.google.com/maps/dir/?api=1&destination= 44.23186221971618, 18.67179881977209 &travelmode=driving';
+});
+      
+      
+    </script>
+</body>
+</html>
